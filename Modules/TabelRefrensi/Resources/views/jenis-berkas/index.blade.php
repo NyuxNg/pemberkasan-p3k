@@ -16,7 +16,7 @@
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
-                <div class="box box-warning">
+                <div class="box">
                     <div class="box-header">
                         <div class="btn-group">
                             <a href="{{ route('tabref.jenis-berkas.export') }}" class="btn btn-success"><i class="fa fa-download mr-2"></i>Export Data</a>

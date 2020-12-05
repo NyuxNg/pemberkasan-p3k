@@ -1,3 +1,4 @@
+@hasrole('admin')
 <li class="header">TABEL REFRENSI</li>
 <li class="{{ set_active('tabref.peserta.index') }}">
     <a href="{{ route('tabref.peserta.index') }}">
@@ -14,3 +15,4 @@
         <i class="fa fa-database"></i> <span>Jenis Berkas</span>
     </a>
 </li>
+@endhasrole

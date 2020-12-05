@@ -1,11 +1,10 @@
 Regex : \/\*([\s\S]*?)\*\/
 
 Step :
-Create Controller
-php artisan module:make-controller JenisBerkas TabelRefrensi
-Create Model - Migration
-php artisan module:make-model JenisBerkas TabelRefrensi
-php artisan module:make-migration create_tabref_jenis_berkas_table TabelRefrensi
+php artisan module:make GetData
+
+php artisan module:make-controller UserPeserta UserManajemen
+php artisan module:make-model UserPeserta UserManajemen
 
 
 php artisan make:export TabelRefrensi/JenisBerkasExport --model=JenisBerkas

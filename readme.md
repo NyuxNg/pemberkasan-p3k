@@ -2,7 +2,7 @@
 
 Jika ada pertanyaan silahkan hubungi 
 
-- [HP / WA](https://wa.me/6282342788059).
+- [HP / WA : 082 342 788 059](https://wa.me/6282342788059).
 
 ## License
 
