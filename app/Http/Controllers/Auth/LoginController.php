@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Modules\TabelRefrensi\Entities\DataPeserta;
 
 class LoginController extends Controller
 {
@@ -60,5 +61,9 @@ class LoginController extends Controller
     {
         $role = Auth::user()->getRoleNames()[0];
         session()->put('role', $role);
+        if ($role == 'peserta') {
+            $peserta = DataPeserta::where('no_peserta', Auth::user()->username)->first();
+            session()->put('peserta_id', $peserta->id);
+        }
     }
 }

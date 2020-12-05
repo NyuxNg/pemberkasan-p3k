@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/dataperorangan",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\DataPerorangan\\Providers\\DataPeroranganServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\DataPerorangan\\": ""
+        }
+    }
+}

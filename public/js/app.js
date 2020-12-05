@@ -38,6 +38,13 @@ $(document).ready(function() {
     });
 
     $('.select2').select2();
+    
+    $('.tanggal').datepicker({
+        autoclose: true,
+        orientation: 'bottom',
+        language: 'id',
+        format: "yyyy-mm-dd"
+    })
 
     $('#formDefault').submit(function (event) {
         event.preventDefault();

@@ -17,4 +17,9 @@ class DataPeserta extends Model
 	{
 		return $this->hasOne('Modules\TabelRefrensi\Entities\DataKabupaten', 'id', 'kab_kota_id');
 	}
+
+	public function kontak()
+	{
+		return $this->hasOne('Modules\DataPerorangan\Entities\DataKontak', 'peserta_id', 'id');
+	}
 }
