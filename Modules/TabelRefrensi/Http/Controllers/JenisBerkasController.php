@@ -40,15 +40,15 @@ class JenisBerkasController extends Controller
                 for ($i=1; $i < sizeof($importData[0]); $i++) {
                     JenisBerkas::updateOrCreate(
                         [
-                            'nama' => $importData[0][$i][0],
-                            'kode' => $importData[0][$i][1],
+                            'kode' => $importData[0][$i][3],
                         ],
                         [
-                            'nama'       => $importData[0][$i][0],
-                            'kode'       => $importData[0][$i][1],
-                            'format'     => $importData[0][$i][2],
-                            'size'       => $importData[0][$i][3],
-                            'keterangan' => $importData[0][$i][4],
+                            'nama'       => $importData[0][$i][1],
+                            'keterangan' => $importData[0][$i][2],
+                            'kode'       => $importData[0][$i][3],
+                            'format'     => $importData[0][$i][4],
+                            'size'       => $importData[0][$i][5],
+                            'penamaan'   => $importData[0][$i][6],
                         ]
                     );
                 }
@@ -73,6 +73,9 @@ class JenisBerkasController extends Controller
         if ($request->ajax()) {
             $model  =   JenisBerkas::orderBy('nama');
             return DataTables::of($model)
+            ->editColumn('size', function($model) {
+                return round($model->size / 1024);
+            })
             ->addIndexColumn()
             ->make(true);
         }

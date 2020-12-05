@@ -11,5 +11,5 @@ class JenisBerkas extends Model
     protected $keyType   = 'string';
 	public $incrementing = false;
 	public $table        = 'tabref_jenis_berkas';
-	protected $fillable  = ['id', 'nama', 'kode', 'format', 'size', 'keterangan'];
+	protected $fillable  = ['id', 'nama', 'keterangan', 'kode', 'format', 'size', 'penamaan'];
 }

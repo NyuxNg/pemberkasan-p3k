@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/pemberkasan",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Pemberkasan\\Providers\\PemberkasanServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Pemberkasan\\": ""
+        }
+    }
+}

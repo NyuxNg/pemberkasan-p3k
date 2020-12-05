@@ -20,11 +20,12 @@ $(document).ready(function() {
         },
         columns: [
             { data: 'DT_RowIndex', name: 'id', className: 'w-5 text-center align-middle' },
-            { data: 'nama', name: 'nama', className: 'w-50 align-middle' },
+            { data: 'nama', name: 'nama', className: 'text-nowrap align-middle' },
+            { data: 'keterangan', name: 'keterangan', className: 'w-25align-middle' },
             { data: 'kode', name: 'kode', className: 'text-center text-nowrap align-middle' },
             { data: 'format', name: 'format', className: 'text-center text-nowrap align-middle' },
             { data: 'size', name: 'size', className: 'text-center text-nowrap align-middle' },
-            { data: 'keterangan', name: 'keterangan', className: 'text-nowrap align-middle' },
+            { data: 'penamaan', name: 'penamaan', className: 'text-nowrap align-middle' },
         ],
         "initComplete": function(settings, json) {
             $('#dataTableDefault_filter input').unbind();

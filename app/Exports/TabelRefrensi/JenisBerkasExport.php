@@ -16,13 +16,13 @@ class JenisBerkasExport extends DefaultValueBinder implements WithCustomValueBin
     public function headings(): array
     {
         return [
-            'nama', 'kode', 'format', 'size', 'keterangan'
+            'id', 'nama', 'keterangan', 'kode', 'format', 'size', 'penamaan'
         ];
     }
 
     public function collection()
     {
-    	return 	DB::table('tabref_jenis_berkas')->select('nama', 'kode', 'format', 'size', 'keterangan')->get();
+    	return 	DB::table('tabref_jenis_berkas')->select('id', 'nama', 'keterangan', 'kode', 'format', 'size', 'penamaan')->get();
     }
 
     public function bindValue(Cell $cell, $value)

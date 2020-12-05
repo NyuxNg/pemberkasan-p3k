@@ -2,6 +2,7 @@
 /public/hot
 /public/storage
 /public/template/adminlte
+/public/upload
 /Export
 /storage/*.key
 /vendor

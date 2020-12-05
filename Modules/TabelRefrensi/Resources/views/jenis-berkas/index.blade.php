@@ -30,10 +30,11 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
+                                    <th>Keterangan</th>
                                     <th>Kode</th>
                                     <th>Format</th>
-                                    <th>Size (Byte)</th>
-                                    <th>Keterangan</th>
+                                    <th>Size (KB)</th>
+                                    <th>Penamaan</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>

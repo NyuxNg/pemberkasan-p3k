@@ -16,10 +16,11 @@ class CreateTabrefJenisBerkasTable extends Migration
         Schema::create('tabref_jenis_berkas', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('nama');
+            $table->string('keterangan');
             $table->string('kode');
             $table->string('format', 5);
             $table->integer('size');
-            $table->string('keterangan');
+            $table->string('penamaan');
             $table->timestamps();
         });
     }

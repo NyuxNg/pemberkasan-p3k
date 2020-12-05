@@ -169,6 +169,71 @@ $(document).ready(function() {
         });
     });
 
+    $('#formUpload').submit(function(event) {
+        event.preventDefault()
+        action = $('#formUpload').attr('action');
+        method = $('#formUpload').attr('method');
+        data = new FormData($('#formUpload')[0]);
+
+        $('#formUpload').find('.help-block').remove();
+        $('#formUpload').find('.form-group').removeClass('has-error');
+
+        $.ajax({
+            url: action,
+            type: method,
+            data: data,
+            processData: false,
+            contentType: false,
+            cache: false,
+            beforeSend: function() {
+                Swal.fire({
+                    title: 'Mohon Menunggu!',
+                    html: 'Sedang mengupload berkas anda ... .',
+                    onBeforeOpen: () => {
+                        Swal.showLoading()
+                    }
+                })
+            },
+            success: function(response) {
+                if (response.success) {
+                    Swal.close()
+                    Toast.fire({
+                        type: 'success',
+                        html: response.message
+                    })
+                    reload_datatable()
+                    $('#modalUpload').modal("hide");
+                }
+
+                if (response.errors) {
+                    Swal.close()
+                    Swal.fire({
+                        type: 'error',
+                        html: response.message
+                    })
+                }
+            },
+            error: function(xhr) {
+                var res = xhr.responseJSON;
+                Swal.close()
+                if (res.errors == null) {
+                    Toast.fire({
+                        type: 'error',
+                        title: res.message
+                    })
+                }
+                if ($.isEmptyObject(res) == false) {
+                    $.each(res.errors, function(key, value) {
+                        $('#' + key)
+                            .closest('.form-group')
+                            .addClass('has-error')
+                            .append('<span class="help-block">' + value + '</span>');
+                    });
+                }
+            }
+        });
+    });
+
     $('#dataTableDefault').on('click', '.btn-delete', function (event) {
         event.preventDefault();
         Swal.fire({
@@ -229,6 +294,11 @@ $(document).ready(function() {
         resetForm()
         $('body').removeAttr('style')
     });
+    
+    $('#modalBasic').on('hidden.bs.modal', function () {
+        $('body').removeAttr('style')
+    });
+
 
     // Function
     function resetForm() {

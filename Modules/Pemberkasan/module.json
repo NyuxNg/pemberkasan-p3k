@@ -1,0 +1,14 @@
+{
+    "name": "Pemberkasan",
+    "alias": "pemberkasan",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Pemberkasan\\Providers\\PemberkasanServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

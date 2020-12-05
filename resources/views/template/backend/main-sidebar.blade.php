@@ -20,7 +20,7 @@
                 </a>
             </li>
             @php
-            $module = ['dataperorangan','usermanajemen','tabelrefrensi'];
+            $module = ['dataperorangan','pemberkasan','usermanajemen','tabelrefrensi'];
             @endphp
             @for ($i = 0; $i < sizeof($module); $i++)
             @include($module[$i] . "::sidebar")

@@ -41,9 +41,11 @@ class DataKontakController extends Controller
             ]
         );
 
-        User::where('username', Auth::user()->username)->update([
-            'email'      => $request->get('email'),
-        ]);
+        if (!empty($request->get('email'))) {
+            User::where('username', Auth::user()->username)->update([
+                'email'      => $request->get('email'),
+            ]);
+        }
 
         return redirect()->back()->with('success', 'Update Data Kontak Berhasil');
     }
