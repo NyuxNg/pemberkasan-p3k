@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/tabelrefrensi",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\TabelRefrensi\\Providers\\TabelRefrensiServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\TabelRefrensi\\": ""
+        }
+    }
+}
