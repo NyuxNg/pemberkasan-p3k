@@ -20,7 +20,7 @@ class CreatePemberkasanBerkasTable extends Migration
             $table->uuid('jberkas_id');
             $table->foreign('jberkas_id')->references('id')->on('tabref_jenis_berkas')->onDelete('cascade');
             $table->string('file')->nullable();
-            $table->enum('status', ['Proses', 'Ditolak', 'Diterima'])->default('Proses')->nullable();
+            $table->enum('status', ['Proses', 'Ditolak', 'Diterima'])->nullable();
             $table->text('keterangan')->nullable();
             $table->uuid('verifikator_id')->nullable();
             $table->foreign('verifikator_id')->references('id')->on('users')->onDelete('cascade');

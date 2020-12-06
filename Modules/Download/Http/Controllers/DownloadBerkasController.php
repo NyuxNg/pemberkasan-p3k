@@ -2,19 +2,25 @@
 
 namespace Modules\Download\Http\Controllers;
 
+use File;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\Pemberkasan\Entities\Berkas;
 use Modules\TabelRefrensi\Entities\DataPeserta;
-use File;
 use ZipArchive;
 
 class DownloadBerkasController extends Controller
 {
     public function index()
     {
+        $berkas = Berkas::whereNotNull('file')->select('peserta_id')->groupBy('peserta_id')->get();
+        $id = [];
+        foreach ($berkas as $b) {
+            $id[] = $b->peserta_id;
+        }
         $data = array(
-            'pesertas' => DataPeserta::orderBy('nama')->get(), 
+            'pesertas' => DataPeserta::whereIn('id', $id)->orderBy('nama')->get(), 
         );
         return view('download::berkas.index', $data);
     }
@@ -68,8 +74,5 @@ class DownloadBerkasController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->with('gagal', 'Download Gagal!. Berkas tidak ditemukan');
         }
-        
     }
-
-   
 }
