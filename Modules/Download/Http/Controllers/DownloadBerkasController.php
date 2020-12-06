@@ -39,7 +39,7 @@ class DownloadBerkasController extends Controller
                 if (!$file->isDir()) {
                     $filePath     = $file->getRealPath();
 
-                    $relativePath = 'berkas/' . substr($filePath, strlen($path) + 1);
+                    $relativePath = 'berkas/' . substr($filePath, strlen($path));
                     $zip->addFile($filePath, $relativePath);
                 }
             }
@@ -65,7 +65,7 @@ class DownloadBerkasController extends Controller
             {
                 if (!$file->isDir()) {
                     $filePath     = $file->getRealPath();
-                    $relativePath = $no_peserta . '/' . substr($filePath, strlen($path) + 1);
+                    $relativePath = $no_peserta . '/' . substr($filePath, strlen($path));
                     $zip->addFile($filePath, $relativePath);
                 }
             }
