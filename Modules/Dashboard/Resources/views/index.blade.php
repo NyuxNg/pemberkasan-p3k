@@ -5,7 +5,7 @@
     <section class="content-header">
         <h1>
             Dashboard
-            <small>Control panel</small>
+            <small>Peserta</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -14,62 +14,69 @@
     </section>
     <section class="content">
         <div class="row">
-            <div class="col-lg-3 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-aqua">
-                    <div class="inner">
-                        <h3>150</h3>
-                        <p>New Orders</p>
+            <div class="col-xs-12">
+                <div class="box box-default">
+                    <div class="box-header text-center border-bottom bg-light">
+                        <h3 class="box-title">Data Identitas Peserta</h3>
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-bag"></i>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="col-sm-5 table-responsive">
+                            <h4>Info Login</h4>
+                            <table class="table table-striped w-100">
+                                <tr>
+                                    <td class="font-weight-bold text-nowrap">Nama</td>
+                                    <td class="text-nowrap" width="2px">:</td>
+                                    <td class="text-nowrap">{{ $login->name }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold text-nowrap">Username</td>
+                                    <td class="text-nowrap" width="2px">:</td>
+                                    <td class="text-nowrap">{{ $login->username }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold text-nowrap">EMail</td>
+                                    <td class="text-nowrap" width="2px">:</td>
+                                    <td class="text-nowrap">{{ $login->email }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-sm-7 table-responsive">
+                            <h4>Data Peserta</h4>
+                            <table class="table table-striped w-100">
+                                <tr>
+                                    <td class="font-weight-bold text-nowrap">No. Peserta</td>
+                                    <td class="text-nowrap" width="2px">:</td>
+                                    <td class="text-nowrap">{{ $peserta->no_peserta }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold text-nowrap">Nama Peserta</td>
+                                    <td class="text-nowrap" width="2px">:</td>
+                                    <td class="text-nowrap">{{ $peserta->nama }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold text-nowrap">Pendidikan</td>
+                                    <td class="text-nowrap" width="2px">:</td>
+                                    <td class="text-nowrap">{{ $peserta->pendidikan }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold text-nowrap">Unit Penempatan</td>
+                                    <td class="text-nowrap" width="2px">:</td>
+                                    <td class="text-nowrap">{{ $peserta->unit_penempatan }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold text-nowrap">Jabatan</td>
+                                    <td class="text-nowrap" width="2px">:</td>
+                                    <td class="text-nowrap">{{ $peserta->jabatan }}</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                    <a href="{{ asset('public/template/adminlte') }}/#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <!-- /.box-body -->
                 </div>
+                <!-- /.box -->
             </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-green">
-                    <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
-                        <p>Bounce Rate</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
-                    </div>
-                    <a href="{{ asset('public/template/adminlte') }}/#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-yellow">
-                    <div class="inner">
-                        <h3>44</h3>
-                        <p>User Registrations</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-person-add"></i>
-                    </div>
-                    <a href="{{ asset('public/template/adminlte') }}/#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-red">
-                    <div class="inner">
-                        <h3>65</h3>
-                        <p>Unique Visitors</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
-                    </div>
-                    <a href="{{ asset('public/template/adminlte') }}/#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-            <!-- ./col -->
+            <!-- /.col -->
         </div>
     </section>
 </div>

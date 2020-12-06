@@ -47,8 +47,47 @@ $(document).ready(function() {
     });
 
     $('#formSearch').on('submit', function(e) {
-        dataTableDefault.draw();
         e.preventDefault();
+        $.ajax({
+            url: base_url + "/getdata/peserta",
+            type: 'POST',
+            data: { no_peserta: $('input[name=no_peserta]').val() },
+            beforeSend: function () {
+                Swal.fire({
+                    html: 'Pencarian Data Peserta ... .',
+                    onBeforeOpen: () => {
+                        Swal.showLoading()
+                    }
+                })
+            },
+            success:function (response) {
+                if (response.success) {
+                    setTimeout(function(){
+                        Swal.close()
+                        $.each(response.content, function(index, val) {
+                            $('#_' + index).html(val)
+                        });
+                        dataTableDefault.draw();
+                    }, 5000);
+                }
+                if (response.errors) {
+                    Swal.close()
+                    Toast.fire({
+                        type: 'error',
+                        title: response.message
+                    })
+                }
+            },
+            error: function (xhr) {
+                var res = xhr.responseJSON;
+                if ($.isEmptyObject(res) == false) {
+                    Toast.fire({
+                        type: 'error',
+                        title: res.message
+                    })
+                }
+            }
+        })
     });
 
     $('#dataTableDefault').on('click', '.btn-verifikasi', function (event) {

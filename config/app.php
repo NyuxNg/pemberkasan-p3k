@@ -12,10 +12,10 @@ return [
     | any other location as required by the application or its packages.
     |
     */
-
+    'env' => env('APP_NAME', 'Pemerintak Kabupaten Lombok Barat'),
     'name' => 'Pemberkasan P3K',
     'name_html' => 'Pemberkasan <b>P3K</b>',
-    'instansi' => 'Pemerintah Kabupaten Lombok Barat',
+    'instansi' => env('APP_NAME', 'Pemerintak Kabupaten Lombok Barat'),
 
     /*
     |--------------------------------------------------------------------------

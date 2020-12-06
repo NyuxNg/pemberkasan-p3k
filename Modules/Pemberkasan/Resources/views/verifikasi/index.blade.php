@@ -28,6 +28,34 @@
                     </div>
                 </div>
                 <!-- /.box -->
+                <div class="box box-info">
+                    <div class="box-body">
+                        <div class="form-group border-bottom">
+                            <label>Nomor Peserta :</label>
+                            <p id="_no_peserta">&nbsp</p>
+                        </div>
+                        <div class="form-group border-bottom">
+                            <label>Nama :</label>
+                            <p id="_nama">&nbsp</p>
+                        </div>
+                        <div class="form-group border-bottom">
+                            <label>Tempat, Tanggal Lahir :</label>
+                            <p id="_tanggal_lahir">&nbsp</p>
+                        </div>
+                        <div class="form-group border-bottom">
+                            <label>Pendidikan :</label>
+                            <p id="_pendidikan">&nbsp</p>
+                        </div>
+                        <div class="form-group border-bottom">
+                            <label>Unit Penempatan :</label>
+                            <p id="_unit_penempatan">&nbsp</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Jabatan :</label>
+                            <p id="_jabatan">&nbsp</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-sm-8">
                 <div class="box box-primary">

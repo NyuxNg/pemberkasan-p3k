@@ -32,11 +32,11 @@
                   <!-- Menu Footer-->
                   <li class="user-footer">
                      <div class="pull-left">
-                        <a href="javascript:void(0)" class="btn btn-default btn-flat">Profile</a>
+                        <a href="{{ route('gantipass.index') }}" class="btn btn-warning btn-flat">Ganti Password</a>
                      </div>
                      <div class="pull-right">
-                        <a class="btn btn-default btn-flat" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                           Logout
+                        <a class="btn bg-navy btn-flat" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                           Log Out
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                               @csrf

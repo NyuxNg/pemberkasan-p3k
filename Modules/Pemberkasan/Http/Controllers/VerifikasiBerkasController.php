@@ -5,6 +5,7 @@ namespace Modules\Pemberkasan\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Modules\Pemberkasan\Entities\Berkas;
 use Yajra\DataTables\DataTables;
@@ -23,13 +24,15 @@ class VerifikasiBerkasController extends Controller
             
             if($request->get('status') == "Diterima") {
                 Berkas::where('id', $berkas->id)->update([
-                    'status'   => $request->get('status'),
+                    'status'         => $request->get('status'),
+                    'verifikator_id' => Auth::id(),
                 ]);
             }
             else{
                 Berkas::where('id', $berkas->id)->update([
-                    'status'   => $request->get('status'),
-                    'keterangan'   => $request->get('keterangan'),
+                    'status'         => $request->get('status'),
+                    'keterangan'     => $request->get('keterangan'),
+                    'verifikator_id' => Auth::id(),
                 ]);
             }
 

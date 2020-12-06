@@ -19,9 +19,9 @@ class CreatePemberkasanBerkasTable extends Migration
             $table->foreign('peserta_id')->references('id')->on('tabref_data_peserta')->onDelete('cascade');
             $table->uuid('jberkas_id');
             $table->foreign('jberkas_id')->references('id')->on('tabref_jenis_berkas')->onDelete('cascade');
-            $table->string('file');
-            $table->enum('status', ['Proses', 'Ditolak', 'Diterima'])->default('Proses');
-            $table->text('keterangan');
+            $table->string('file')->nullable();
+            $table->enum('status', ['Proses', 'Ditolak', 'Diterima'])->default('Proses')->nullable();
+            $table->text('keterangan')->nullable();
             $table->uuid('verifikator_id')->nullable();
             $table->foreign('verifikator_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

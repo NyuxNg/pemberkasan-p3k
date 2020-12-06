@@ -2,8 +2,8 @@
 
 <body class="hold-transition login-page">
     <div class="login-box">
-        <div class="login-logo mb-2">
-            <a href="#" class="text-info">{!! config('app.name_html') !!}</a>
+        <div class="login-logo mb-3">
+            <a href="{{ url('/') }}" class="text-info font-weight-bold">Login <strong>P3K</strong></a>
         </div>
         <h4 class="text-center text-uppercase mt-0 mb-4">{{ config('app.instansi') }}</h4>
         <!-- /.login-logo -->
@@ -36,15 +36,16 @@
                         <input type="checkbox"> Ingatkan saya
                         </label>
                         </div> -->
+            <a href="https://drive.google.com/drive/folders/1RFqCQJ0Pcmcj2VWmub05LpaJOVhZLvkH?usp=sharing" class="btn bg-navy" target="_blank"><i class="fa fa-book mr-2"></i>Panudan</a><br>
+
                     </div>
                     <!-- /.col -->
                     <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block font-weight-bold text-uppercase">Login</button>
+                        <button type="submit" class="btn btn-primary pull-right font-weight-bold text-uppercase">Login</button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
-            <!-- <a href="#">Saya lupa kata sandi saya</a><br> -->
         </div>
         <!-- /.login-box-body -->
     </div>

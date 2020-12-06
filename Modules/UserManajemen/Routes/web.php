@@ -22,3 +22,8 @@ Route::group(['prefix' => 'userman', 'middleware' => ['auth', 'role:admin']], fu
         Route::get('/data', 'UserPesertaController@data')->name('userman.peserta.data');
     });
 });
+
+Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
+    Route::get('/gantipass', 'UserProfileController@index')->name('gantipass.index');
+    Route::post('/gantipass', 'UserProfileController@ganti')->name('gantipass.ganti');
+});
