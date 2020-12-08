@@ -55,6 +55,11 @@
                                     <td class="text-nowrap">{{ $peserta->nama }}</td>
                                 </tr>
                                 <tr>
+                                    <td class="font-weight-bold text-nowrap">Tempat, Tanggal Lahir</td>
+                                    <td class="text-nowrap" width="2px">:</td>
+                                    <td class="text-nowrap">{{ $peserta->kabupaten_nama . ", " . tanggal($peserta->tanggal_lahir) }}</td>
+                                </tr>
+                                <tr>
                                     <td class="font-weight-bold text-nowrap">Pendidikan</td>
                                     <td class="text-nowrap" width="2px">:</td>
                                     <td class="text-nowrap">{{ $peserta->pendidikan }}</td>

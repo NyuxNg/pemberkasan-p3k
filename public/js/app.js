@@ -299,6 +299,10 @@ $(document).ready(function() {
         $('body').removeAttr('style')
     });
 
+    $('#modalNotif').on('hidden.bs.modal', function () {
+        $('body').removeAttr('style')
+    });
+
 
     // Function
     function resetForm() {

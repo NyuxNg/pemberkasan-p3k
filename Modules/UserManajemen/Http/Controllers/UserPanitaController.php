@@ -206,6 +206,9 @@ class UserPanitaController extends Controller
                 ->select('users.*', 'roles.description');
 
             return DataTables::of($model)
+            ->filterColumn('description', function($query, $keyword) {
+                $query->orWhere('roles.description', 'like', ["%{$keyword}%"]);
+            })
             ->addColumn('action', function ($model) {
                 return  '<a href="'.route('userman.panitia.edit', $model->id).'" class="btn btn-warning text-dark btn-sm btn-edit"><i class="fa fa-pencil-square mr-1"></i> Edit</a>';
                 // '<a href="'.route('userman.panitia.destroy', $model->id).'" class="btn btn-danger btn-sm btn-delete ml-2"><i class="fa fa-remove mr-1"></i> Hapus</a>';

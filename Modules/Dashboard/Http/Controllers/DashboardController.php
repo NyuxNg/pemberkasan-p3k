@@ -31,9 +31,12 @@ class DashboardController extends Controller
 
     private function peserta()
     {
+        $peserta                   = DataPeserta::find(session()->get('peserta_id'));
+        $peserta['kabupaten_nama'] = $peserta->kabupaten->nama;
+        
     	$data = array(
 			'login'   => Auth::user(), 
-			'peserta' => DataPeserta::find(session()->get('peserta_id')), 
+			'peserta' => $peserta, 
     	);
         return view('dashboard::index', $data);
     }
