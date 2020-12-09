@@ -56,7 +56,7 @@ class DataKabupatenController extends Controller
             }
         }
         else{
-            return redirect()->route('dashboad.index');
+            return dashbord_url();
         }
     }
 
@@ -74,7 +74,7 @@ class DataKabupatenController extends Controller
             ->make(true);
         }
         else{
-            return redirect()->route('dashboad.index');
+            return dashbord_url();
         }
     }
 }

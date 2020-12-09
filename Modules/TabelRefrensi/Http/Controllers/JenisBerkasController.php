@@ -59,7 +59,7 @@ class JenisBerkasController extends Controller
             }
         }
         else{
-            return redirect()->route('dashboad.index');
+            return dashbord_url();
         }
     }
 
@@ -70,7 +70,7 @@ class JenisBerkasController extends Controller
 
     public function data(Request $request)
     {
-        if ($request->ajax()) {
+        if ($request->ajax() == false) {
             $model  =   JenisBerkas::orderBy('nama');
             return DataTables::of($model)
             ->editColumn('size', function($model) {
@@ -80,7 +80,7 @@ class JenisBerkasController extends Controller
             ->make(true);
         }
         else{
-            return redirect()->route('dashboad.index');
+            return dashbord_url();
         }
     }
 }

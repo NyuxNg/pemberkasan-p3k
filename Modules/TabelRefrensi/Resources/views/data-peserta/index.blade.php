@@ -18,10 +18,12 @@
             <div class="col-xs-12">
                 <div class="box box-warning">
                     <div class="box-header">
+                        @hasrole('admin')
                         <div class="btn-group">
                             <a href="{{ route('tabref.peserta.export') }}" class="btn btn-success"><i class="fa fa-download mr-2"></i>Export Data</a>
                             <button class="btn btn-warning" data-toggle="modal" data-target="#modalImport"><i class="fa fa-upload mr-2"></i>Import Data</button>
                         </div>
+                        @endhasrole
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body table-responsive">

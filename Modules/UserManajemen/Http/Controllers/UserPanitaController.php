@@ -43,7 +43,7 @@ class UserPanitaController extends Controller
             }
         }
         else{
-            return redirect()->route('dashboard.index');
+            return dashbord_url();
         }
     }
 
@@ -177,7 +177,7 @@ class UserPanitaController extends Controller
             ]);
         }
         else{
-            return redirect()->route('dashboard.index');
+            return dashbord_url();
         }
     }
 
@@ -219,7 +219,7 @@ class UserPanitaController extends Controller
 
         }
         else{
-            return redirect()->route('dashboard.index');
+            return dashbord_url();
         }
     }
 

@@ -35,3 +35,10 @@ if (! function_exists('tanggal')) {
     }
 }
 
+if (! function_exists('dashbord_url')) {
+    function dashbord_url()
+    {
+        return redirect()->route('dashboard.index');
+    }
+}
+

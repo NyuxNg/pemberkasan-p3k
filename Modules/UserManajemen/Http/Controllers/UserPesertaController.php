@@ -27,8 +27,6 @@ class UserPesertaController extends Controller
 
                 $peserta = DataPeserta::all();
 
-                // return $peserta;
-
                 foreach ($peserta as $p) {
                     $split = explode("-", $p->tanggal_lahir);
                     $user = User::updateOrCreate(
@@ -56,7 +54,7 @@ class UserPesertaController extends Controller
             }
         }
         else{
-            return redirect()->route('dashboard.index');
+            return dashbord_url();
         }
     }
 
@@ -183,7 +181,7 @@ class UserPesertaController extends Controller
             ]);
         }
         else{
-            return redirect()->route('dashboard.index');
+            return dashbord_url();
         }
     }
 
@@ -221,7 +219,7 @@ class UserPesertaController extends Controller
 
         }
         else{
-            return redirect()->route('dashboard.index');
+            return dashbord_url();
         }
     }
 

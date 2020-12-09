@@ -10,5 +10,5 @@ php artisan module:make-migration create_pemberkasan_berkas_table Pemberkasan
 php artisan module:migrate Pemberkasan
 
 
-php artisan make:export Download/KontakPesertaExport
+php artisan make:export Laporan/VerifikasiExport
 php artisan make:export Download/LainnyaPesertaExport
