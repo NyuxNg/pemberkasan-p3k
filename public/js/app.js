@@ -97,7 +97,7 @@ $(document).ready(function() {
                         $('#' + key)
                             .closest('.form-group')
                             .addClass('has-error')
-                            .append('<span class="help-block">' + value + '</span>');
+                            .append('<span class="help-block">' + value[0] + '</span>');
                     });
                 }
             }
@@ -302,7 +302,6 @@ $(document).ready(function() {
     $('#modalNotif').on('hidden.bs.modal', function () {
         $('body').removeAttr('style')
     });
-
 
     // Function
     function resetForm() {

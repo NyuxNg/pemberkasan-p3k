@@ -10,7 +10,7 @@ $(document).ready(function() {
         toast: true,
         position: 'middle-center',
         showConfirmButton: false,
-        timer: 3000
+        timer: 2000
     });
 
     var dataTableDefault = $('#dataTableDefault').DataTable({
@@ -68,7 +68,7 @@ $(document).ready(function() {
                             $('#_' + index).html(val)
                         });
                         dataTableDefault.draw();
-                    }, 5000);
+                    }, 1000);
                 }
                 if (response.errors) {
                     Swal.close()

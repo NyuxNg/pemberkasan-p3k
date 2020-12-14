@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
+use Modules\TabelRefrensi\Entities\DataDesa;
+use Modules\TabelRefrensi\Entities\DataKabupaten;
+use Modules\TabelRefrensi\Entities\DataKecamatan;
 use Modules\TabelRefrensi\Entities\DataPeserta;
+use Modules\TabelRefrensi\Entities\DataProvinsi;
 use Spatie\Permission\Models\Role;
 
 class GetDataController extends Controller
@@ -48,6 +52,70 @@ class GetDataController extends Controller
         }
         else{
             return redirect()->route('dashboard.index');
+        }
+    }
+
+    public function provinsi(Request $request)
+    {
+        if ($request->ajax()) {
+            return response()->json([
+                'success' => true,
+                'content' => DataProvinsi::orderBy('nama')->get()
+            ]);
+        }
+    }
+
+    public function kabupaten(Request $request)
+    {
+        if ($request->ajax()) {
+            if ($request->get('provinsi_id')) {
+                return response()->json([
+                    'success' => true,
+                    'content' => DataKabupaten::where('provinsi_id', $request->get('provinsi_id'))->orderBy('nama')->get()
+                ]);
+            }
+            else{
+                return response()->json([
+                    'success' => true,
+                    'content' => DataKabupaten::orderBy('nama')->get()
+                ]);
+            }
+        }
+    }
+
+    public function kecamatan(Request $request)
+    {
+        if ($request->ajax()) {
+            if ($request->get('kabupaten_id')) {
+                return response()->json([
+                    'success' => true,
+                    'content' => DataKecamatan::where('kabupaten_id', $request->get('kabupaten_id'))->orderBy('nama')->get()
+                ]);
+            }
+            else{
+                return response()->json([
+                    'success' => true,
+                    'content' => DataKecamatan::orderBy('nama')->get()
+                ]);
+            }
+        }
+    }
+
+    public function desa(Request $request)
+    {
+        if ($request->ajax()) {
+            if ($request->get('kecamatan_id')) {
+                return response()->json([
+                    'success' => true,
+                    'content' => DataDesa::where('kecamatan_id', $request->get('kecamatan_id'))->orderBy('nama')->get()
+                ]);
+            }
+            else{
+                return response()->json([
+                    'success' => true,
+                    'content' => DataDesa::orderBy('nama')->get()
+                ]);
+            }
         }
     }
 }

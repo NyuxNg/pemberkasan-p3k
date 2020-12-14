@@ -16,13 +16,13 @@ class DataKabupatenExport extends DefaultValueBinder implements WithCustomValueB
     public function headings(): array
     {
         return [
-            'ID',  'Nama Kabupaten'
+            'ID',  'Nama Kabupaten', 'Provinsi ID'
         ];
     }
 
     public function collection()
     {
-    	return 	DB::table('tabref_data_kabupaten')->select('id',  'nama')->get();
+    	return 	DB::table('tabref_data_kabupaten')->select('id', 'nama', 'provinsi_id')->get();
     }
 
     public function bindValue(Cell $cell, $value)

@@ -7,6 +7,7 @@ use App\Imports\TabelRefrensi\DataKabupatenImport;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
 use Modules\TabelRefrensi\Entities\DataKabupaten;
@@ -44,8 +45,9 @@ class DataKabupatenController extends Controller
                             'id'    => $importData[0][$i][0],
                         ],
                         [
-                            'id'    => $importData[0][$i][0],
-                            'nama'  => $importData[0][$i][1],
+                            'id'          => $importData[0][$i][0],
+                            'nama'        => $importData[0][$i][1],
+                            'provinsi_id' => $importData[0][$i][2],
                         ]
                     );
                 }
@@ -68,8 +70,13 @@ class DataKabupatenController extends Controller
     public function data(Request $request)
     {
         if ($request->ajax()) {
-            $model  =   DataKabupaten::orderBy('nama');
+            $model  =   DB::table('tabref_data_kabupaten')->join('tabref_data_provinsi', 'tabref_data_provinsi.id', '=', 'tabref_data_kabupaten.provinsi_id')
+                        ->select('tabref_data_kabupaten.*', 'tabref_data_provinsi.nama as provinsi_nama')
+                        ->orderBy('tabref_data_kabupaten.id');
             return DataTables::of($model)
+            ->filterColumn('provinsi_nama', function($query, $keyword) {
+                $query->where('tabref_data_provinsi.nama', 'like', ["%{$keyword}%"]);
+            })
             ->addIndexColumn()
             ->make(true);
         }

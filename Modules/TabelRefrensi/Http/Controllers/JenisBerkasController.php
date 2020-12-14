@@ -70,7 +70,7 @@ class JenisBerkasController extends Controller
 
     public function data(Request $request)
     {
-        if ($request->ajax() == false) {
+        if ($request->ajax()) {
             $model  =   JenisBerkas::orderBy('nama');
             return DataTables::of($model)
             ->editColumn('size', function($model) {

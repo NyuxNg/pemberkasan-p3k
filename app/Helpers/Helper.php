@@ -35,6 +35,15 @@ if (! function_exists('tanggal')) {
     }
 }
 
+if (! function_exists('bulan')) {
+    function bulan()
+    {
+        $value = Carbon::parse(date('Y-m-d'));
+        $parse = $value->locale('id');
+        return $parse->translatedFormat('F Y');
+    }
+}
+
 if (! function_exists('dashbord_url')) {
     function dashbord_url()
     {

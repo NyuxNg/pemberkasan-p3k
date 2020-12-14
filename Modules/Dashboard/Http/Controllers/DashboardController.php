@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use Modules\DRH\Entities\KeteranganPerorangan;
 use Modules\Pemberkasan\Entities\Berkas;
 use Modules\TabelRefrensi\Entities\DataPeserta;
 

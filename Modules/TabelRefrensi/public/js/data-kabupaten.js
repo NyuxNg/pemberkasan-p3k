@@ -22,6 +22,7 @@ $(document).ready(function() {
             { data: 'DT_RowIndex', name: 'id', className: 'w-5 text-center align-middle' },
             { data: 'id', name: 'id', className: 'w-15 text-center text-nowrap align-middle' },
             { data: 'nama', name: 'nama', className: 'text-nowrap align-middle' },
+            { data: 'provinsi_nama', name: 'provinsi_nama', className: 'text-nowrap align-middle' },
         ],
         "initComplete": function(settings, json) {
             $('#dataTableDefault_filter input').unbind();

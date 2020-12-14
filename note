@@ -2,13 +2,18 @@ Regex : \/\*([\s\S]*?)\*\/
 7601K120000011
 
 Step :
-php artisan module:make Download
+php artisan module:make DRH
 
-php artisan module:make-controller UserProfile UserManajemen
-php artisan module:make-model UploadBerkas Pemberkasan
-php artisan module:make-migration create_pemberkasan_berkas_table Pemberkasan
+php artisan module:make-controller Pelatihan DRH
+php artisan module:make-model Pelatihan DRH
+php artisan module:make-migration create_drh_pelatihan_table DRH
+
+php artisan module:make-migration create_tabref_data_provinsi_table TabelRefrensi
+php artisan module:make-migration create_tabref_data_kabupaten_table TabelRefrensi
+php artisan module:make-migration create_tabref_data_kecamatan_table TabelRefrensi
+php artisan module:make-migration create_tabref_data_desa_table TabelRefrensi
 php artisan module:migrate Pemberkasan
 
 
-php artisan make:export Laporan/VerifikasiExport
-php artisan make:export Download/LainnyaPesertaExport
+php artisan make:export TabelRefrensi/DataDesaExport --model=DataDesa
+php artisan make:import TabelRefrensi/DataDesaImport --model=DataDesa

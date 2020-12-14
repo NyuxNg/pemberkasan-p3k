@@ -31,6 +31,7 @@
                                     <th>No</th>
                                     <th>Kode</th>
                                     <th>Nama Kabupaten</th>
+                                    <th>Nama Provinsi</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>

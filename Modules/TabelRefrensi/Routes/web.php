@@ -14,11 +14,32 @@ Route::group(['prefix' => 'tabref', 'middleware' => ['auth']], function() {
     });
 
     Route::group(['middleware' => 'role:admin'], function() {
+        Route::group(['prefix' => 'data-provinsi'], function() {
+            Route::get('/', 'DataProvinsiController@index')->name('tabref.provinsi.index');
+            Route::get('/export', 'DataProvinsiController@export')->name('tabref.provinsi.export');
+            Route::post('/import', 'DataProvinsiController@import')->name('tabref.provinsi.import');
+            Route::get('/data', 'DataProvinsiController@data')->name('tabref.provinsi.data');
+        });
+
         Route::group(['prefix' => 'data-kabupaten'], function() {
         	Route::get('/', 'DataKabupatenController@index')->name('tabref.kabupaten.index');
         	Route::get('/export', 'DataKabupatenController@export')->name('tabref.kabupaten.export');
         	Route::post('/import', 'DataKabupatenController@import')->name('tabref.kabupaten.import');
         	Route::get('/data', 'DataKabupatenController@data')->name('tabref.kabupaten.data');
+        });
+
+        Route::group(['prefix' => 'data-kecamatan'], function() {
+            Route::get('/', 'DataKecamatanController@index')->name('tabref.kecamatan.index');
+            Route::get('/export', 'DataKecamatanController@export')->name('tabref.kecamatan.export');
+            Route::post('/import', 'DataKecamatanController@import')->name('tabref.kecamatan.import');
+            Route::get('/data', 'DataKecamatanController@data')->name('tabref.kecamatan.data');
+        });
+
+        Route::group(['prefix' => 'data-desa'], function() {
+            Route::get('/', 'DataDesaController@index')->name('tabref.desa.index');
+            Route::get('/export', 'DataDesaController@export')->name('tabref.desa.export');
+            Route::post('/import', 'DataDesaController@import')->name('tabref.desa.import');
+            Route::get('/data', 'DataDesaController@data')->name('tabref.desa.data');
         });
 
         Route::group(['prefix' => 'jenis-berkas'], function() {

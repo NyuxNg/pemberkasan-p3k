@@ -7,7 +7,7 @@
 <script type="text/javascript" src="{{ asset('public/template/adminlte/bower_components/select2/dist/js/i18n/id.js') }}"></script>
 <script type="text/javascript" src="{{ asset('public/template/adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('public/template/adminlte/bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.id.min.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script type="text/javascript" src="{{ asset('public/template/adminlte/plugins/sweetalert2/dist/sweetalert2.js') }}"></script>
 
 <script src="{{ asset('public/template/adminlte') }}/dist/js/adminlte.min.js"></script>
 <script src="{{ asset('public/js/app.js') }}"></script>
