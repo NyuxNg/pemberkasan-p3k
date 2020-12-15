@@ -177,6 +177,7 @@
             <tr>
                 <th rowspan="2" class="no">No</th>
                 <th rowspan="2">Instansi / Perusahaan</th>
+                <th rowspan="2">Jabatan</th>
                 <th colspan="2" class="text-center">Masa Kerja</th>
                 <th rowspan="2">Gaji Pokok</th>
                 <th colspan="3" class="text-center">Surat Keputusan</th>
@@ -203,7 +204,7 @@
             @php
                 $no=1;
             @endphp
-            @foreach ($pendidikan as $p)
+            @foreach ($pekerjaan as $p)
                 <tr>
                     <td class="text-center">{{ $no++ }}</td>
                     <td>{{ $p->instansi }}</td>
